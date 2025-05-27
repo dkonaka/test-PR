@@ -1,106 +1,81 @@
-## Project overview
+# ASP.NET Core 9 Web Application
 
-This blueprint creates a [React](https://reactjs.org/) SPA (single-page application) project. The project uses the Typescript [AWS Cloud Development Kit (CDK)](https://aws.amazon.com/cdk/) to deploy to [AWS Amplify Hosting](https://aws.amazon.com/amplify/hosting/).
+## Project Overview
 
-### Architecture overview
+This project is an ASP.NET Core 9 web application that follows the Model-View-Controller (MVC) architectural pattern. It provides a basic structure for building web applications with ASP.NET Core.
 
-A (SPA) single-page application is a web application implementation that loads a web document and updates it by using JavaScript APIs. Your customers can then use your website without loading entire pages from the server, which helps improve your website's performance and provides a more dynamic user experience. 
+### Architecture Overview
 
-The deployment pipeline deploys the SPA to an Amazon CodeCatalyst environment. The Amazon CodeCatalyst environment requires an AWS account connection for your Amazon CodeCatalyst space and a configured IAM role for your project workflow. After you create your project, you can view the repository, source code, and CI/CD workflow for your Amazon CodeCatalyst project. After your workflow runs successfully, you can access your deployed CDK application URL in the output of your workflow.
+The application follows the standard MVC architecture:
+- **Models**: Represent the data and business logic of the application
+- **Views**: Handle the presentation and user interface
+- **Controllers**: Process incoming requests, interact with models, and return views
 
-### Web application framework
+## Project Structure
 
-**[React](https://reactjs.org/)** - powered by [Create React App](https://create-react-app.dev/)
+This project contains the following structure:
 
-### Hosting
+- `/Controllers` - Contains controller classes that handle HTTP requests
+- `/Models` - Contains model classes that represent data
+- `/Views` - Contains Razor views for rendering HTML
+  - `/Home` - Views for the Home controller
+  - `/Shared` - Shared views like layouts and partials
+- `/wwwroot` - Contains static files like CSS, JavaScript, and images
 
-**AWS Amplify Hosting**
+## Getting Started
 
-[AWS Amplify Hosting](https://aws.amazon.com/amplify/hosting/) offers a fully managed hosting service for web apps and static websites that can be accessed directly from the AWS console.
+### Prerequisites
 
-![AWS Amplify Architecture Diagram](https://deyn4asqcu6xj.cloudfront.net/create-spa-amplify-hosting.png)
+- [.NET 9 SDK](https://dotnet.microsoft.com/download)
+- A code editor (Visual Studio, Visual Studio Code, etc.)
 
-## Connections and permissions
+### Running the Application
 
-You can create a new account connection from the AWS accounts menu in your Amazon CodeCatalyst space. AWS IAM roles added to the account connection are used to authorize project workflows to access AWS account resources.
+1. Clone the repository
+2. Navigate to the project directory
+3. Run the application:
 
-Expected role capabilities: *CodeCatalyst**
-
-## Project resources
-
-This project contains the following folders:
-
-- root - The web application
-- cdk - The CDK project to deploy the application
-
-This project has created the following Amazon CodeCatalyst Resources:
-
-- A source repository
-- An environment
-- A workflow for verifying pull requests at .codecatalyst/workflows/onPullRequestBuildAndTest.yaml
-- A workflow for deploying changes pushed to main at .codecatalyst/workflows/onPushToMainDeployPipeline.yaml
-
-### Cleaning up resources
-
-Describe how you clean up/ remove the deployed resources created by this blueprint
-
-## CDK Deployment
-
-If you want to deploy without using CI/CD workflows, after building the app in the root directory you can move the `build` folder to the `cdk/frontend` folder by running:
 ```bash
-mkdir cdk/frontend && cp -r build cdk/frontend
+dotnet run
 ```
-And then follow the instrucitons in the `cdk` folder README file.
 
-## Additional resources
+4. Open your browser and navigate to `https://localhost:5001` or `http://localhost:5000`
 
-See the Amazon CodeCatalyst user guide for additional information on using the features and resources of Amazon CodeCatalyst
+### Building the Application
 
----
+To build the application, run:
 
-# Getting Started with Create React App
+```bash
+dotnet build
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Running Tests
 
-## Available Scripts
+To run tests, run:
 
-In the project directory, you can run:
+```bash
+dotnet test
+```
 
-### `npm start`
+## Development Environment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application is configured with different environments:
+- **Development**: Used during development
+- **Staging**: Used for testing before production
+- **Production**: Used for the live application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To specify the environment, set the `ASPNETCORE_ENVIRONMENT` environment variable:
 
-### `npm test`
+```bash
+# Windows
+set ASPNETCORE_ENVIRONMENT=Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# macOS/Linux
+export ASPNETCORE_ENVIRONMENT=Development
+```
 
-### `npm run build`
+## Additional Resources
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ASP.NET Core Documentation](https://docs.microsoft.com/aspnet/core)
+- [C# Documentation](https://docs.microsoft.com/dotnet/csharp)
+- [Razor Syntax Reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor)
