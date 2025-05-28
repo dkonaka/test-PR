@@ -1,60 +1,87 @@
 {
+  // Name of the project
   "name": "reactts",
+  // Current version of the project
   "version": "0.1.0",
+  // Indicates this package is not intended to be published to npm
   "private": true,
+  // External dependencies required by the project
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.3",
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
-    "jest-junit": "^14.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4"
+    // Testing libraries
+    "@testing-library/jest-dom": "^5.16.5",    // DOM testing utilities for Jest
+    "@testing-library/react": "^13.4.0",       // React testing utilities
+    "@testing-library/user-event": "^13.5.0",  // User event simulation for testing
+    
+    // TypeScript type definitions
+    "@types/jest": "^27.5.2",                  // TypeScript definitions for Jest
+    "@types/node": "^16.18.3",                 // TypeScript definitions for Node.js
+    "@types/react": "^18.0.24",                // TypeScript definitions for React
+    "@types/react-dom": "^18.0.8",             // TypeScript definitions for ReactDOM
+    
+    // Testing utilities
+    "jest-junit": "^14.0.1",                   // JUnit reporter for Jest
+    
+    // React core libraries
+    "react": "^18.2.0",                        // React library
+    "react-dom": "^18.2.0",                    // React DOM manipulation
+    "react-scripts": "5.0.1",                  // Create React App scripts and configuration
+    
+    // Core technologies
+    "typescript": "^4.8.4",                    // TypeScript language
+    "web-vitals": "^2.1.4"                     // Library to measure web vitals metrics
   },
+  
+  // NPM scripts for various tasks
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",            // Start development server
+    "build": "react-scripts build",            // Build production bundle
+    "test": "react-scripts test",              // Run tests
+    "eject": "react-scripts eject"             // Eject from Create React App
   },
+  
+  // ESLint configuration
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app",                             // Use Create React App's ESLint config
+      "react-app/jest"                         // Add Jest-specific ESLint rules
     ]
   },
+  
+  // Browser compatibility configuration
   "browserslist": {
+    // Browsers supported in production
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      ">0.2%",                                 // Browsers with >0.2% global usage
+      "not dead",                              // Exclude browsers without official support
+      "not op_mini all"                        // Exclude Opera Mini
     ],
+    // Browsers supported during development
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 chrome version",                 // Latest Chrome
+      "last 1 firefox version",                // Latest Firefox
+      "last 1 safari version"                  // Latest Safari
     ]
   },
+  
+  // Jest testing configuration
   "jest": {
+    // Files to include in code coverage reports
     "collectCoverageFrom": [
-      "**/*.{ts,tsx}",
-      "!**/node_modules/**",
-      "!**/build/**",
-      "!**/definitionfiles/**",
-      "!**/*.mock.ts",
-      "!src/setupTests.ts"
+      "**/*.{ts,tsx}",                         // Include all TypeScript files
+      "!**/node_modules/**",                   // Exclude node_modules
+      "!**/build/**",                          // Exclude build directory
+      "!**/definitionfiles/**",                // Exclude definition files
+      "!**/*.mock.ts",                         // Exclude mock files
+      "!src/setupTests.ts"                     // Exclude test setup file
     ],
+    // Coverage report formats
     "coverageReporters": [
-      "lcov"
+      "lcov"                                   // Generate lcov format reports
     ]
   },
+  
+  // Jest JUnit reporter configuration
   "jest-junit": {
-    "outputName": "coverage/junit.xml"
+    "outputName": "coverage/junit.xml"         // Output path for JUnit XML reports
   }
 }

@@ -1,3 +1,16 @@
+@* 
+ * _ViewImports.cshtml
+ * This file defines global imports and tag helpers for all Razor views in the application
+ *@
+
+@* Import the root namespace of the application *@
 @using AspNetCoreApp
+
+@* Import the Models namespace to make model classes available in views *@
 @using AspNetCoreApp.Models
+
+@* 
+ * Register all tag helpers from Microsoft.AspNetCore.Mvc.TagHelpers
+ * This enables built-in tag helpers like <a asp-controller="Home">, <form asp-action="Submit">, etc.
+ *@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
