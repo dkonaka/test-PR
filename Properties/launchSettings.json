@@ -1,26 +1,45 @@
 {
+  // IIS configuration settings
   "iisSettings": {
+    // Disable Windows authentication
     "windowsAuthentication": false,
+    // Enable anonymous authentication
     "anonymousAuthentication": true,
+    // IIS Express specific settings
     "iisExpress": {
+      // URL where the application will be hosted in IIS Express
       "applicationUrl": "http://localhost:5000",
+      // SSL port for HTTPS connections
       "sslPort": 5001
     }
   },
+  // Launch profiles for different hosting environments
   "profiles": {
+    // Profile for running the application directly (dotnet run)
     "AspNetCoreApp": {
+      // Specifies to run the project directly
       "commandName": "Project",
+      // Display dotnet run command messages in the console
       "dotnetRunMessages": true,
+      // Open a browser window when the application starts
       "launchBrowser": true,
+      // URLs where the application will listen for requests
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      // Environment variables to set when running the application
       "environmentVariables": {
+        // Set the application to run in Development mode
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    // Profile for running the application in IIS Express
     "IIS Express": {
+      // Specifies to run using IIS Express
       "commandName": "IISExpress",
+      // Open a browser window when the application starts
       "launchBrowser": true,
+      // Environment variables to set when running the application
       "environmentVariables": {
+        // Set the application to run in Development mode
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }

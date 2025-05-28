@@ -1,12 +1,32 @@
+/* 
+ * index.css
+ * This file contains global styles that apply to the entire application
+ */
+
+/* 
+ * Base styles for the body element
+ * Removes default margin and sets a system font stack for better typography
+ */
 body {
-  margin: 0;
+  margin: 0; /* Remove default margin */
+  
+  /* 
+   * Font stack that uses system fonts for optimal performance and native look
+   * Falls back through various system fonts based on the operating system
+   */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+  /* Font smoothing for better rendering on various browsers */
+  -webkit-font-smoothing: antialiased;     /* For WebKit browsers (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale;      /* For Firefox on macOS */
 }
 
+/* 
+ * Styles for code elements
+ * Uses monospace fonts for better code readability and proper spacing
+ */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

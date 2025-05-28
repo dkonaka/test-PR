@@ -1,38 +1,64 @@
+/* 
+ * App.css
+ * This file contains styles specific to the App component
+ */
+
+/* Center align all content within the App container */
 .App {
   text-align: center;
 }
 
+/* 
+ * Styling for the React logo
+ * Sets the height relative to viewport and disables pointer events
+ */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* 
+ * Animation for the logo, but only if the user doesn't prefer reduced motion
+ * This is an accessibility feature that respects user preferences
+ */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* 
+ * Styles for the App header section
+ * Creates a full-height, centered flex container with dark background
+ */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #282c34; /* Dark background color */
+  min-height: 100vh;         /* Full viewport height */
+  display: flex;             /* Use flexbox layout */
+  flex-direction: column;    /* Stack children vertically */
+  align-items: center;       /* Center children horizontally */
+  justify-content: center;   /* Center children vertically */
+  font-size: calc(10px + 2vmin); /* Responsive font size */
+  color: white;              /* White text color */
 }
 
+/* 
+ * Style for links within the App
+ * Uses React's default blue color (#61dafb)
+ */
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* React blue */
 }
 
+/* 
+ * Keyframe animation definition for the spinning logo
+ * Rotates the logo 360 degrees
+ */
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg);   /* Start position */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* End position (full rotation) */
   }
 }
